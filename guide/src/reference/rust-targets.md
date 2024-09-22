@@ -20,7 +20,7 @@ pub fn add(a: u32, b: u32) -> u32 {
     a + b
 }
 
-#[cfg(not(target_arch = "wasm32"))]
+#[cfg(not(target_family = "wasm"))]
 fn main() {
     println!("1 + 2 = {}", add(1, 2));
 }
@@ -50,14 +50,14 @@ on the `wasm32-unknown-unknown` target. You can have a target-specific
 dependency like so:
 
 ```toml
-[target.'cfg(target_arch = "wasm32")'.dependencies]
+[target.'cfg(target_family = "wasm")'.dependencies]
 wasm-bindgen = "0.2"
 ```
 
 And in your code you can use:
 
 ```rust
-#[cfg(target_arch = "wasm32")]
+#[cfg(target_family = "wasm")]
 #[wasm_bindgen]
 pub fn only_on_the_wasm_target() {
     // ...
