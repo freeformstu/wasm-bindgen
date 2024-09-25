@@ -480,12 +480,12 @@ fn renamed_field() {
     js_renamed_field();
 }
 
-#[cfg_attr(target_arch = "wasm32", wasm_bindgen)]
+#[cfg_attr(target_family = "wasm", wasm_bindgen)]
 pub struct ConditionalBindings {}
 
-#[cfg_attr(target_arch = "wasm32", wasm_bindgen)]
+#[cfg_attr(target_family = "wasm", wasm_bindgen)]
 impl ConditionalBindings {
-    #[cfg_attr(target_arch = "wasm32", wasm_bindgen(constructor))]
+    #[cfg_attr(target_family = "wasm", wasm_bindgen(constructor))]
     pub fn new() -> ConditionalBindings {
         ConditionalBindings {}
     }

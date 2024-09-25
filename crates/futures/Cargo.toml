@@ -28,7 +28,7 @@ features = [
     "Worker",
 ]
 
-[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+[target.'cfg(target_family = "wasm")'.dev-dependencies]
 wasm-bindgen-test = { path = '../test', version = '0.3.42' }
 futures-channel-preview = { version = "0.3.0-alpha.18" }
 futures-lite = { version = "1.11.3", default-features = false }

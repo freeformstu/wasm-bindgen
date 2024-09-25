@@ -1,4 +1,4 @@
-#![cfg(target_arch = "wasm32")]
+#![cfg(target_family = "wasm")]
 #![allow(non_snake_case)]
 
 pub mod Array;

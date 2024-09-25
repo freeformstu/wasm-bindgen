@@ -48,31 +48,31 @@ macro_rules! console_log {
 macro_rules! wasm_bindgen_test_configure {
     (run_in_browser $($others:tt)*) => (
         #[link_section = "__wasm_bindgen_test_unstable"]
-        #[cfg(target_arch = "wasm32")]
+        #[cfg(target_family = "wasm")]
         pub static __WBG_TEST_RUN_IN_BROWSER: [u8; 1] = [0x01];
         $crate::wasm_bindgen_test_configure!($($others)*);
     );
     (run_in_worker $($others:tt)*) => (
         #[link_section = "__wasm_bindgen_test_unstable"]
-        #[cfg(target_arch = "wasm32")]
+        #[cfg(target_family = "wasm")]
         pub static __WBG_TEST_RUN_IN_DEDICATED_WORKER: [u8; 1] = [0x02];
         $crate::wasm_bindgen_test_configure!($($others)*);
     );
     (run_in_dedicated_worker $($others:tt)*) => (
         #[link_section = "__wasm_bindgen_test_unstable"]
-        #[cfg(target_arch = "wasm32")]
+        #[cfg(target_family = "wasm")]
         pub static __WBG_TEST_RUN_IN_DEDICATED_WORKER: [u8; 1] = [0x02];
         $crate::wasm_bindgen_test_configure!($($others)*);
     );
     (run_in_shared_worker $($others:tt)*) => (
         #[link_section = "__wasm_bindgen_test_unstable"]
-        #[cfg(target_arch = "wasm32")]
+        #[cfg(target_family = "wasm")]
         pub static __WBG_TEST_RUN_IN_SHARED_WORKER: [u8; 1] = [0x03];
         $crate::wasm_bindgen_test_configure!($($others)*);
     );
     (run_in_service_worker $($others:tt)*) => (
         #[link_section = "__wasm_bindgen_test_unstable"]
-        #[cfg(target_arch = "wasm32")]
+        #[cfg(target_family = "wasm")]
         pub static __WBG_TEST_RUN_IN_SERVICE_WORKER: [u8; 1] = [0x04];
         $crate::wasm_bindgen_test_configure!($($others)*);
     );
