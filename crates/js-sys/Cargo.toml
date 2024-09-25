@@ -23,7 +23,7 @@ test = false
 [dependencies]
 wasm-bindgen = { path = "../..", version = "0.2.93" }
 
-[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+[target.'cfg(target_family = "wasm")'.dev-dependencies]
 wasm-bindgen-futures = { path = '../futures' }
 wasm-bindgen-test = { path = '../test' }
 web-sys = { path = "../web-sys", features = ["Headers", "Response", "ResponseInit"] }

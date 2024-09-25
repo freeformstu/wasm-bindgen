@@ -1,6 +1,6 @@
 // Silences warnings from the compiler about Work.func and child_entry_point
 // being unused when the target is not wasm.
-#![cfg_attr(not(target_arch = "wasm32"), allow(dead_code))]
+#![cfg_attr(not(target_family = "wasm"), allow(dead_code))]
 
 //! A small module that's intended to provide an example of creating a pool of
 //! web workers which can be used to execute `rayon`-style work.
